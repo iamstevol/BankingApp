@@ -36,8 +36,30 @@ public class LoopStructure {
         }
     }
 
+    public void resultSummary() {
+        Scanner input = new Scanner(System.in);
+        int successCounter = 0;
+        int failureCounter = 0;
+        int studentCounter = 0;
+        int result;
+
+        while(studentCounter < 10) {
+            System.out.println("Enter 1 for pass, and 2 for fail");
+            result = input.nextInt();
+            if(result == 1) {
+                successCounter += 1;
+            } else {
+                failureCounter += 1;
+            }
+            studentCounter += 1;
+        }
+        System.out.println("Total number of student that passed = " + successCounter);
+        System.out.println("Total number of student that failed = " + failureCounter);
+    }
+
     public static void main(String[] args) {
         LoopStructure loopStructure = new LoopStructure();
-        loopStructure.calculateAverage();
+//        loopStructure.calculateAverage();
+        loopStructure.resultSummary();
     }
 }
